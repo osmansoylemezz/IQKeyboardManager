@@ -1477,7 +1477,7 @@ NSInteger const kIQPreviousNextButtonToolbarTag     =   -1005;
         if (isResignFirstResponder == NO)
         {
             //If it refuses to resign then becoming it first responder again for getting notifications callback.
-            [textFieldRetain becomeFirstResponder];
+            //[textFieldRetain becomeFirstResponder];
             
             [self showLog:[NSString stringWithFormat:@"Refuses to Resign first responder: %@",[textFieldView _IQDescription]]];
         }
@@ -1556,7 +1556,7 @@ NSInteger const kIQPreviousNextButtonToolbarTag     =   -1005;
         if (isAcceptAsFirstResponder == NO)
         {
             //If next field refuses to become first responder then restoring old textField as first responder.
-            [textFieldRetain becomeFirstResponder];
+            //[textFieldRetain becomeFirstResponder];
             
             [self showLog:[NSString stringWithFormat:@"Refuses to become first responder: %@",[nextTextField _IQDescription]]];
         }
@@ -1593,7 +1593,7 @@ NSInteger const kIQPreviousNextButtonToolbarTag     =   -1005;
         if (isAcceptAsFirstResponder == NO)
         {
             //If next field refuses to become first responder then restoring old textField as first responder.
-            [textFieldRetain becomeFirstResponder];
+            //[textFieldRetain becomeFirstResponder];
             
             [self showLog:[NSString stringWithFormat:@"Refuses to become first responder: %@",[nextTextField _IQDescription]]];
         }

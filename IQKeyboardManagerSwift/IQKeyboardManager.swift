@@ -439,7 +439,7 @@ Codeless drop-in universal library allows to prevent issues of keyboard sliding 
             //  If it refuses then becoming it as first responder again.    (Bug ID: #96)
             if isResignFirstResponder == false {
                 //If it refuses to resign then becoming it first responder again for getting notifications callback.
-                textFieldRetain.becomeFirstResponder()
+                //textFieldRetain.becomeFirstResponder()
                 
                 showLog("Refuses to resign first responder: \(String(describing: textFieldRetain._IQDescription()))")
             }
@@ -512,7 +512,7 @@ Codeless drop-in universal library allows to prevent issues of keyboard sliding 
                         //  If it refuses then becoming previous textFieldView as first responder again.    (Bug ID: #96)
                         if isAcceptAsFirstResponder == false {
                             //If next field refuses to become first responder then restoring old textField as first responder.
-                            textFieldRetain.becomeFirstResponder()
+                            //textFieldRetain.becomeFirstResponder()
                             
                             showLog("Refuses to become first responder: \(nextTextField._IQDescription())")
                         }
@@ -546,7 +546,7 @@ Codeless drop-in universal library allows to prevent issues of keyboard sliding 
                         //  If it refuses then becoming previous textFieldView as first responder again.    (Bug ID: #96)
                         if isAcceptAsFirstResponder == false {
                             //If next field refuses to become first responder then restoring old textField as first responder.
-                            textFieldRetain.becomeFirstResponder()
+                            //textFieldRetain.becomeFirstResponder()
                             
                             showLog("Refuses to become first responder: \(nextTextField._IQDescription())")
                         }
