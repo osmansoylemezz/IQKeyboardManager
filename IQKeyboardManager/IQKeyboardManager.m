@@ -1477,7 +1477,7 @@ NSInteger const kIQPreviousNextButtonToolbarTag     =   -1005;
         if (isResignFirstResponder == NO)
         {
             //If it refuses to resign then becoming it first responder again for getting notifications callback.
-            //[textFieldRetain becomeFirstResponder];
+            [textFieldRetain becomeFirstResponder];
             
             [self showLog:[NSString stringWithFormat:@"Refuses to Resign first responder: %@",[textFieldView _IQDescription]]];
         }
@@ -1550,15 +1550,19 @@ NSInteger const kIQPreviousNextButtonToolbarTag     =   -1005;
         //  Retaining textFieldView
         UIView *textFieldRetain = _textFieldView;
         
-        BOOL isAcceptAsFirstResponder = [nextTextField becomeFirstResponder];
+        BOOL isAcceptAsFirstResponder = [nextTextField canBecomeFirstResponder];
         
         //  If it refuses then becoming previous textFieldView as first responder again.    (Bug ID: #96)
         if (isAcceptAsFirstResponder == NO)
         {
             //If next field refuses to become first responder then restoring old textField as first responder.
-            //[textFieldRetain becomeFirstResponder];
+            [textFieldRetain becomeFirstResponder];
             
             [self showLog:[NSString stringWithFormat:@"Refuses to become first responder: %@",[nextTextField _IQDescription]]];
+        }
+        else
+        {
+            [nextTextField performSelector:@selector(becomeFirstResponder) withObject:nil afterDelay:0];
         }
         
         return isAcceptAsFirstResponder;
@@ -1587,15 +1591,19 @@ NSInteger const kIQPreviousNextButtonToolbarTag     =   -1005;
         //  Retaining textFieldView
         UIView *textFieldRetain = _textFieldView;
         
-        BOOL isAcceptAsFirstResponder = [nextTextField becomeFirstResponder];
+        BOOL isAcceptAsFirstResponder = [nextTextField canBecomeFirstResponder];
         
         //  If it refuses then becoming previous textFieldView as first responder again.    (Bug ID: #96)
         if (isAcceptAsFirstResponder == NO)
         {
             //If next field refuses to become first responder then restoring old textField as first responder.
-            //[textFieldRetain becomeFirstResponder];
+            [textFieldRetain becomeFirstResponder];
             
             [self showLog:[NSString stringWithFormat:@"Refuses to become first responder: %@",[nextTextField _IQDescription]]];
+        }
+        else
+        {
+            [nextTextField performSelector:@selector(becomeFirstResponder) withObject:nil afterDelay:0];
         }
         
         return isAcceptAsFirstResponder;
