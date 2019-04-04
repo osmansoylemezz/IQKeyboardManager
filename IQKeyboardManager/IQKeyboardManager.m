@@ -1551,12 +1551,7 @@ NSInteger const kIQPreviousNextButtonToolbarTag     =   -1005;
         UIView *textFieldRetain = _textFieldView;
         
         BOOL isAcceptAsFirstResponder = [nextTextField canBecomeFirstResponder];
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            
-            [nextTextField becomeFirstResponder];
-        });
-        
+    
         //  If it refuses then becoming previous textFieldView as first responder again.    (Bug ID: #96)
         if (isAcceptAsFirstResponder == NO)
         {
@@ -1564,6 +1559,10 @@ NSInteger const kIQPreviousNextButtonToolbarTag     =   -1005;
             [textFieldRetain becomeFirstResponder];
             
             [self showLog:[NSString stringWithFormat:@"Refuses to become first responder: %@",[nextTextField _IQDescription]]];
+        }
+        else
+        {
+            [nextTextField becomeFirstResponder];
         }
         
         return isAcceptAsFirstResponder;
@@ -1594,11 +1593,6 @@ NSInteger const kIQPreviousNextButtonToolbarTag     =   -1005;
         
         BOOL isAcceptAsFirstResponder = [nextTextField canBecomeFirstResponder];
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            
-            [nextTextField becomeFirstResponder];
-        });
-        
         //  If it refuses then becoming previous textFieldView as first responder again.    (Bug ID: #96)
         if (isAcceptAsFirstResponder == NO)
         {
@@ -1606,6 +1600,10 @@ NSInteger const kIQPreviousNextButtonToolbarTag     =   -1005;
             [textFieldRetain becomeFirstResponder];
             
             [self showLog:[NSString stringWithFormat:@"Refuses to become first responder: %@",[nextTextField _IQDescription]]];
+        }
+        else
+        {
+            [nextTextField becomeFirstResponder];
         }
         
         return isAcceptAsFirstResponder;
