@@ -1562,6 +1562,7 @@ NSInteger const kIQPreviousNextButtonToolbarTag     =   -1005;
         }
         else
         {
+            isAcceptAsFirstResponder = NO;
             [nextTextField performSelector:@selector(becomeFirstResponder) withObject:nil afterDelay:0];
         }
         
@@ -1603,6 +1604,7 @@ NSInteger const kIQPreviousNextButtonToolbarTag     =   -1005;
         }
         else
         {
+            isAcceptAsFirstResponder = NO;
             [nextTextField performSelector:@selector(becomeFirstResponder) withObject:nil afterDelay:0];
         }
         
